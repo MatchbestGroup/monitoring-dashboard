@@ -1,0 +1,19 @@
+global:
+  scrape_interval: 15s  # how often to scrape targets by default
+  evaluation_interval: 15s
+
+scrape_configs:
+  # Scrape Prometheus itself
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+
+  # Scrape Loki
+  - job_name: "loki"
+    static_configs:
+      - targets: ["loki:3100"]
+
+  # Scrape Grafana (optional, if metrics are enabled)
+  - job_name: "grafana"
+    static_configs:
+      - targets: ["grafana:3000"]

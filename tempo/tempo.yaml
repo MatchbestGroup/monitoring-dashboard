@@ -1,0 +1,12 @@
+auth_enabled: false
+server:
+  http_listen_port: 3200
+  grpc_listen_port: 4317
+  http_path_prefix: /
+storage:
+  trace:
+    backend: filesystem
+    filesystem:
+      path: /tmp/tempo/traces
+    wal:
+      path: /tmp/tempo/wal

@@ -1,26 +1,62 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 20, 20, 20;
+    --foreground: 240, 240, 240;
+    --card: 28, 28, 30;
+    --card-foreground: 240, 240, 240;
+    --popover: 28, 28, 30;
+    --popover-foreground: 240, 240, 240;
+    --primary: 240, 240, 240;
+    --primary-foreground: 20, 20, 20;
+    --secondary: 28, 28, 30;
+    --secondary-foreground: 240, 240, 240;
+    --muted: 15, 15, 15;
+    --muted-foreground: 150, 150, 150;
+    --accent: 28, 28, 30;
+    --accent-foreground: 240, 240, 240;
+    --border: 15, 15, 15;
+    --input: 15, 15, 15;
+    --ring: 28, 28, 30;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240, 240, 240;
+    --foreground: 20, 20, 20;
+    --card: 240, 240, 240;
+    --card-foreground: 20, 20, 20;
+    --popover: 240, 240, 240;
+    --popover-foreground: 20, 20, 20;
+    --primary: 20, 20, 20;
+    --primary-foreground: 240, 240, 240;
+    --secondary: 240, 240, 240;
+    --secondary-foreground: 20, 20, 20;
+    --muted: 230, 230, 230;
+    --muted-foreground: 100, 100, 100;
+    --accent: 240, 240, 240;
+    --accent-foreground: 20, 20, 20;
+    --border: 230, 230, 230;
+    --input: 230, 230, 230;
+    --ring: 240, 240, 240;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: rgb(var(--background));
+  color: rgb(var(--foreground));
+}
+
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+html, body, #__next {
+  height: 100%;
+}
+body {
+  background: rgb(var(--background));
+  color: rgb(var(--foreground));
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
